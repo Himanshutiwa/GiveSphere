@@ -1,0 +1,162 @@
+.profile-sidebar {
+    min-height: calc(100vh - 120px);
+    background: #d10c47;
+    border-right: 1px solid #e3e6f0;
+    padding-top: 20px;
+}
+
+.profile-sidebar .nav-link {
+    padding: 12px 20px;
+    color: #f6f6f6ff;
+    border-radius: 0;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.profile-sidebar .nav-link i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.upload-icon-below {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #0d6efd;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.upload-icon-below i {
+    font-size: 16px;
+}
+
+.upload-icon-below:hover {
+    color: #084298;
+}
+.profile-sidebar .nav-link:hover,
+.profile-sidebar .nav-link.active {
+    background-color: #dc1158ff;
+    border-left: 4px solid #ffffffff;
+    color: #fdfeffff;
+}
+
+.logout-link {
+    color: #fefefeff !important;
+}
+
+/* Content Area */
+.content-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    margin-top: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f8f9fc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #4e73df;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f8f9fc;
+
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    /* Sidebar ko top menu me badalna */
+    .profile-sidebar {
+        min-height: auto !important;
+        border-right: none;
+        border-bottom: 1px solid #e3e6f0;
+        padding: 10px 0;
+    }
+
+    /* Links ko side-by-side (Horizontal scrollable) dikhane ke liye */
+    .profile-sidebar .nav {
+        flex-direction: row !important;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .profile-sidebar .nav-link {
+        padding: 8px 15px;
+        margin: 0 5px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        font-size: 14px;
+        display: inline-flex;
+    }
+
+    /* Active link par bottom border dikhana mobile me */
+    .profile-sidebar .nav-link:hover,
+    .profile-sidebar .nav-link.active {
+        border-left: none;
+        border-bottom: 3px solid #ffffff;
+    }
+
+    .profile-sidebar .nav-link i {
+        margin-right: 5px;
+        font-size: 16px;
+    }
+
+    /* Content Area ki padding kam karna */
+    main.col-md-9 {
+        padding: 15px !important;
+    }
+
+    .content-card {
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Choti screens par table ko scrollable banana */
+@media (max-width: 576px) {
+    .table-responsive {
+        font-size: 13px;
+    }
+
+    .btn {
+        width: 100%;
+        /* Mobile par buttons full width */
+        margin-bottom: 10px;
+    }
+}

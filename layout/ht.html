@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiveSphere - Dashboard</title>
+    
+    <!-- CSS Files (From Header) -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/aos.css">
+    <link rel="stylesheet" href="CSS/Style.css"> <!-- Your Main Style -->
+
+    <!-- Dashboard Specific Icons & Fonts -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2855/2855589.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <style>
+        /* Header Fix for Dashboard */
+       
+    </style>
+</head>
+<body>
+
+
+    
+        <!-- Container for Dashboard Sections -->
+        <div class="dashboard-container">
+            
+            <!-- Section: User Profile -->
+            <section id="profile" class="dashboard-section">
+                <div class="card-custom">
+                    <div class="profile-header-bg"></div>
+                    <div class="profile-body text-center">
+                        <div class="profile-img-wrapper">
+                            <img src="hti.jpg" id="profileImageDisplay" alt="User">
+                            <label for="uploadImg" class="camera-icon shadow">
+                                <i class="fas fa-pencil-alt"></i>
+                            </label>
+                            <input type="file" id="uploadImg" hidden onchange="previewImage(event)">
+                        </div>
+                        <h3 class="fw-bold mb-1 mt-2" id="displayName">Himanshu Tiwari</h3>
+                        <p class="text-muted small mb-4">Gorakhpur | Uttar Pradesh</p>
+
+                        <div class="row text-start g-4 px-2 pb-4">
+                            <div class="col-md-6 border-bottom pb-2">
+                                <label class="detail-label">Full Name</label>
+                                <p class="detail-value" id="pName">Himanshu Tiwari</p>
+                            </div>
+                            <div class="col-md-6 border-bottom pb-2">
+                                <label class="detail-label">Email Address</label>
+                                <p class="detail-value" id="pEmail">ht@gmail.com</p>
+                            </div>
+                            <div class="col-md-6 border-bottom pb-2">
+                                <label class="detail-label">Phone Number</label>
+                                <p class="detail-value" id="pPhone">+91 7729038218</p>
+                            </div>
+                            <div class="col-md-6 border-bottom pb-2">
+                                <label class="detail-label">City</label>
+                                <p class="detail-value" id="pCity">Lucknow Uttar Pradesh</p>
+                            </div>
+                            <div class="col-md-6 border-bottom pb-2">
+                                <label class="detail-label">Country</label>
+                                <p class="detail-value" id="pCountry">India</p>
+                            </div>
+                            <div class="col-md-6 border-bottom pb-2">
+                                <label class="detail-label">Pin Code</label>
+                                <p class="detail-value" id="pPinCode">622322</p>
+                            </div>
+                            <div class="col-12 border-bottom pb-2">
+                                <label class="detail-label">Full Address</label>
+                                <p class="detail-value" id="pAddress">Jankipuram Lucknow</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-dark rounded-pill px-5 mt-3" onclick="openEditModal()">
+                            <i class="fas fa-user-edit me-2"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Donate -->
+            <section id="donate" class="dashboard-section d-none">
+                <div class="card-custom">
+                    <h3 class="fw-bold mb-4">Make a Donation</h3>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4"><button class="amount-btn" onclick="selectAmount(500, this)">₹500</button></div>
+                        <div class="col-md-4"><button class="amount-btn active" onclick="selectAmount(1000, this)">₹1000</button></div>
+                        <div class="col-md-4"><button class="amount-btn" onclick="selectAmount(5000, this)">₹5000</button></div>
+                    </div>
+                    <!-- Custom Amount & Cause Select (as per your previous code) -->
+                    <button class="btn btn-teal w-100 py-3 fs-5">Donate Now</button>
+                </div>
+            </section>
+
+            <!-- Tracking & Updates sections continue here as per your original code... -->
+             <section id="tracking" class="dashboard-section d-none">
+                <!-- ... Content from your previous code ... -->
+             </section>
+
+        </div>
+    </div>
+
+    <!-- Edit Modal (Keep your original modal here) -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="profile.js"></script>
+    <script>
+        function showSection(sectionId, element) {
+            document.querySelectorAll('.dashboard-section').forEach(s => s.classList.add('d-none'));
+            document.getElementById(sectionId).classList.remove('d-none');
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+        }
+        function handleLogout() {
+            if(confirm("Are you sure you want to logout?")) {
+                window.location.href = "logout.php";
+            }
+        }
+    </script>
+</body>
+</html>
